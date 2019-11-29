@@ -8,8 +8,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adolfodev.countries.R
 import com.adolfodev.countries.adapter.CountriesAdapter
+import com.adolfodev.countries.network.CountriesApi
 import com.adolfodev.countries.viewmodel.CountriesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(CountriesViewModel::class.java)
         viewModel.refresh()
+
 
         rvCountries.apply {
             layoutManager = LinearLayoutManager(context)
